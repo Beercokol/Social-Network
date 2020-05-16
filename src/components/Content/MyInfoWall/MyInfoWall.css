@@ -1,0 +1,10 @@
+.myInfo{
+ display: flex;
+ justify-content: center;
+ margin-bottom: 100px;
+}
+.myPhoto{
+ margin-right: 30px;
+ width: 150px;
+ height: 150px;
+}
