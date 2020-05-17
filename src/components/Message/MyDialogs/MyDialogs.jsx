@@ -9,8 +9,7 @@ const MyDialogs =(props)=>{
   
 <div>
 <MessageField messageData={props.messageData}/>
-<MessageInput  dispatch={props.dispatch} 
-        newMessageText={props.newMassageText}/>
+<MessageInput/>
 </div>
 
  )

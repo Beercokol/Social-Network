@@ -12,28 +12,9 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
         <Navbar />
-        <Route
-          path="/profile"
-          render={() => (
-            <Content
-              profilePage={props.state.profilePage}
-              dispatch={props.dispatch}
-            />
-          )}
-        />
+        <Route path="/profile" render={() => <Content/>} />
 
-        <Route
-          exact
-          path="/message"
-          render={() => (
-            <Message
-              messagePage={props.state.messagePage}
-             dispatch={props.dispatch}
-             
-          
-            />
-          )}
-        />
+        <Route exact path="/message" render={() => <Message/>} />
       </div>
     </BrowserRouter>
   );

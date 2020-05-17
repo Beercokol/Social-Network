@@ -1,29 +1,21 @@
 import React from "react";
 import './PostWriter.css'
-import {addPostActionCreator,updatePostActionCreator} from '../../../redux/state'
 
 
 
 const PostWriter = (props) => {
  let postValue= React.createRef();
-
- let addPost=()=>{
-  props.dispatch(addPostActionCreator())
- };
-  
-  let onPostChange=()=>{
-  let text = postValue.current.value;
-props.dispatch(updatePostActionCreator(text))  }
+//  let text = postValue.current.value;
  
   return (
     <div>
       <textarea 
       ref={postValue}
-      onChange={onPostChange}
+      onChange={props.onPostChange}
         placeholder="White post" className="postInput" 
         value={props.newPostText} />
         
-      <button onClick={addPost}>Add new post</button>
+      <button onClick={props.addPost}>Add new post</button>
     </div>
   );
 };

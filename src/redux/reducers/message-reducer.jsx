@@ -1,7 +1,6 @@
-  //actions 
-  export const ADD_MESSAGE = 'ADD_MESSAGE';
- export const UPDATE_NEW_MESSAGE ='UPDATE_NEW_MESSAGE';
-  // начальное состояние для redux , если не указать , то получим undefined
+ import {ADD_MESSAGE , UPDATE_NEW_MESSAGE} from '../actions'
+
+
   let newState ={ messageData: [
       { message: "first message", id: "1" },
       { message: "second message", id: "2" },
@@ -18,7 +17,7 @@
   switch(action.type) {
     case ADD_MESSAGE:
       let newMessage = {
-        id: "4",
+        id: state.messageData.length+1,
         message: state.newMessageText,
       };
       state.messageData.push(newMessage);
