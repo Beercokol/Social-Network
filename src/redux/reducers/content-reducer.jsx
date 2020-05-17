@@ -13,20 +13,21 @@ export const ADD_POST ='ADD_POST';
     }
  // reducers ( get old state and add new state!!!)
  export const contentReducer=(state = newState , action)=>{
+   let stateCopy = {...state}
  switch(action.type ){
  case ADD_POST:
       let newPost = {
-        id: "5",
-        message: state.newPostText,
+        id:stateCopy.postData.length+1,
+        message: stateCopy.newPostText,
         likeCount: 0,
       };
-      state.postData.unshift(newPost);
-      state.newPostText = "";
-      return state;
+      stateCopy.postData.unshift(newPost);
+      stateCopy.newPostText = "";
+      return stateCopy;
      case UPDATE_NEW_POST: 
-      state.newPostText = action.newText;
-      return state;
+      stateCopy.newPostText = action.newText;
+      return stateCopy;
     default:
-       return state;
+       return stateCopy;
     }
 };

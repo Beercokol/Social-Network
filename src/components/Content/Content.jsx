@@ -13,7 +13,7 @@ const Content = (props) => {
   return (
     <div className="content">
       <MyInfoWall />
-      <PostWriter newPostText={props.newPostText} />
+      <PostWriter newPostText={props.newPostText} onPostChange={props.onPostChange} addPost={props.addPost} />
       <Posts postData={props.postData} />
     </div>
   );
@@ -28,8 +28,9 @@ let mapStateToProps = (state) => {
 
 const mapDispatchToProps =(dispatch)=>{
 return{
-   onPostChange:(text)=>{
-dispatch(updatePostActionCreator(text))
+   onPostChange:(e)=>{
+let body = e.target.value;
+dispatch(updatePostActionCreator(body))
    },
    addPost:()=>{
      dispatch(addPostActionCreator())
