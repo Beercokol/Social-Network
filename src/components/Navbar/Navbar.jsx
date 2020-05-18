@@ -9,6 +9,7 @@ const Navbar = () => {
               <div><NavLink to="/message">Messages</NavLink> </div>
        <div><a href="/music">Music</a> </div>
        <div><a href="/settings">Settings</a></div>
+              <div><NavLink to="/users">All Users</NavLink></div>
               <button className="logout">Log out</button>
           
        </nav>

@@ -14,21 +14,22 @@
 
    // reducers ( get old state and add new state!!!)
   export const messageReducer=(state = newState,action)=>{
+       let stateCopy = {...state}
   switch(action.type) {
     case ADD_MESSAGE:
       let newMessage = {
-        id: state.messageData.length+1,
-        message: state.newMessageText,
+        id: stateCopy.messageData.length+1,
+        message: stateCopy.newMessageText,
       };
-      state.messageData.push(newMessage);
-      state.newMessageText = "";
-      return state;
+      stateCopy.messageData.push(newMessage);
+      stateCopy.newMessageText = "";
+      return stateCopy;
   case UPDATE_NEW_MESSAGE: 
-      state.newMessageText = action.newText;
-      return state;
+      stateCopy.newMessageText = action.newText;
+      return stateCopy;
   
     default:
-       return state;
+       return stateCopy;
     }
   };
  

@@ -4,7 +4,6 @@ import MyFriend from "./MyFriend/MyFriend";
 import online from "../../../img/online.png";
 
 const MyFriends = (props) => {
- debugger;
   return (
     <div className="myFriends">
       <h3>My friends</h3>
