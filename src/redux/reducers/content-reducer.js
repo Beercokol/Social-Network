@@ -1,3 +1,5 @@
+import { SET_PROFILE } from "../actions";
+
  //actions
 export const ADD_POST ='ADD_POST';
  export const UPDATE_NEW_POST = 'UPDATE_NEW_POST';
@@ -10,6 +12,7 @@ export const ADD_POST ='ADD_POST';
       { id: "2", message: "This is my second post", likeCount: "12" },
       { id: "3", message: "This is my third post", likeCount: "38" },
     ],
+    profile:{},
     }
  // reducers ( get old state and add new state!!!)
  export const contentReducer=(state = newState , action)=>{
@@ -27,6 +30,11 @@ export const ADD_POST ='ADD_POST';
      case UPDATE_NEW_POST: 
       stateCopy.newPostText = action.newText;
       return stateCopy;
+      case SET_PROFILE:
+      return{
+        ...state,
+        profile:action.profile,
+      }
     default:
        return stateCopy;
     }

@@ -4,7 +4,6 @@ import './PostWriter.css'
 
 
 const PostWriter = (props) => {
-  debugger;
  let postValue= React.createRef();
  //let text = postValue.current.value;
  let state = {

@@ -3,3 +3,8 @@
  justify-content: space-around;
  margin-bottom: 30px;
 }
+.active__page{
+ font-weight: bold;
+ color: blue;
+ cursor: pointer;
+}

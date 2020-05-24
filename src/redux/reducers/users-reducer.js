@@ -1,32 +1,12 @@
-import { FOLLOW, UNFOLLOW, SET_USERS } from "../actions";
+import { FOLLOW, UNFOLLOW, SET_USERS , SET_CURRENT_PAGE  ,SET_TOTAL_COUNT , IS_FETCHING, IN_PROGRES} from "../actions";
 
 let oldState = {
-  users: [
-    {
-      id: 1,
-      fullName: "Alex K",
-      photoUrl: "https://thumbs.dfs.ivi.ru/storage38/contents/3/9/30b2b6bb2b19632824c170e20caf5c.jpg",
-      status: "life is beautifull",
-      followed: false,
-      location: { country: "Russia", city: "VRN" },
-    },
-    {
-      id: 2,
-      fullName: "Alex K",
-      photoUrl: "https://thumbs.dfs.ivi.ru/storage38/contents/3/9/30b2b6bb2b19632824c170e20caf5c.jpg",
-      status: "life is beautifull",
-      followed: true,
-      location: { country: "Russia", city: "VRN" },
-    },
-    {
-      id: 3,
-      fullName: "Alex K",
-      photoUrl: "https://thumbs.dfs.ivi.ru/storage38/contents/3/9/30b2b6bb2b19632824c170e20caf5c.jpg",
-      status: "life is beautifull",
-      followed: false,
-      location: { country: "Russia", city: "VRN" },
-    },
-  ],
+  users: [],
+  pageSize:100,
+  totalUserCount:1000,
+  currentPage:1,
+  isFetching: false,
+  inProgress:true,
 };
 
 export const usersReducer = (state = oldState, action) => {
@@ -56,8 +36,32 @@ export const usersReducer = (state = oldState, action) => {
     case SET_USERS: {
       return {
         ...state,
-        users: [...state.users, action.users],
+        users: [ ...action.users],
       };
+    }
+    case SET_CURRENT_PAGE:{
+      return{
+        ...state,
+        currentPage : action.currentPage
+      }
+    }
+    case SET_TOTAL_COUNT:{
+      return{
+        ...state,
+        totalUserCount: action.totalCount
+      }
+    }
+    case IS_FETCHING:{
+      return{
+        ...state,
+        isFetching:action.isFetching
+      }
+    }
+    case IN_PROGRES:{
+      return{
+        ...state,
+        inProgress:action.inProgress
+      }
     }
     default:
       return state;

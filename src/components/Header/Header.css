@@ -1,8 +1,14 @@
 .header{
   grid-area: h;
   background-color: cornflowerblue;
+  display: flex;
+  justify-content: space-between;
 }
 .header img{
   width: 60px;
   height: 60px;
+}
+.login-info{
+  color: aliceblue;
+  
 }

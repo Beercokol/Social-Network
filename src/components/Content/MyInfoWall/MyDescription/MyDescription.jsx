@@ -1,11 +1,11 @@
 import React from 'react';
 import './MyDescription.css';
 
-const MyDescription =()=>{
+const MyDescription =(props)=>{
  return(
 <div className="description">
-<div>Name</div>
-<div>Age</div>
+<div>About me : {props.profile.aboutMe}</div>
+<div>Full name : {props.profile.fullName}</div>
 <div>Work or Study</div>
 <div>Interesting</div>
 </div>
